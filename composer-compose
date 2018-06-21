@@ -1,0 +1,3 @@
+#!/bin/bash
+ARGS="$@"
+docker-compose exec fpm sh -c "composer $ARGS"
