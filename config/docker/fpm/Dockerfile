@@ -44,16 +44,4 @@ RUN { \
 RUN curl --silent --show-error https://getcomposer.org/installer | php
 RUN cp composer.phar /usr/local/bin/composer
 
-RUN rm -rf /var/www/build
-WORKDIR /var/www/build
-COPY ./composer.json ./composer.json
-COPY ./composer.lock ./composer.lock
-COPY ./scripts ./scripts
-RUN composer install
-
 WORKDIR /var/www/html
-
-COPY ./config/docker/fpm/init.sh /root/init.sh
-RUN chmod +x /root/init.sh
-
-CMD ["/root/init.sh"]

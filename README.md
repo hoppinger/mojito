@@ -10,13 +10,15 @@ In the cloned repository, run
 docker-compose up
 ```
 
-Wait until you see something like:
-
-```
-fpm_1    | [21-Jun-2018 13:11:45] NOTICE: ready to handle connections
-```
+Wait until all containers are started up.
 
 Keep the terminal open, and open a new terminal where you can interact with the running containers. Make sure you change to the cloned repository again.
+
+Install all packages
+
+```sh
+./composer-compose install
+```
 
 Import the database:
 
