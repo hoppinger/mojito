@@ -2,17 +2,6 @@
 
 // @codingStandardsIgnoreFile
 
-# $databases['default']['default'] = [
-#   'database' => getenv('MYSQL_DATABASE'),
-#   'driver' => 'mysql',
-#   'host' => getenv('MYSQL_HOSTNAME'),
-#   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-#   'password' => getenv('MYSQL_PASSWORD'),
-#   'port' => getenv('MYSQL_PORT'),
-#   'prefix' => '',
-#   'username' => getenv('MYSQL_USER'),
-# ];
-
 $databases = array();
 $databases['default']['default'] = [
   'database' => getenv('DRUPAL_DB_NAME'),
@@ -51,4 +40,3 @@ if (getenv('DRUPAL_MODE') == 'development') {
 
   $settings['skip_permissions_hardening'] = TRUE;
 }
-
