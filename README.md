@@ -31,3 +31,9 @@ Import the configuration
 ./drush-compose cim -y
 ./drush-compose cr
 ```
+
+## Usage
+
+Navigate to http://localhost:5080/ and admire your running Drupal installation. 
+
+If you want to login, you can navigatie to http://localhost:5080/user. In the baseline SQL there is a user with username `admin` and password `welcome1234`.
