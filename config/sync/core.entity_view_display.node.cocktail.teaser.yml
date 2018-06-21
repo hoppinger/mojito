@@ -1,0 +1,28 @@
+uuid: 5d22701d-3e68-4b45-af7c-1e3bea234b06
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.cocktail.body
+    - node.type.cocktail
+  module:
+    - text
+    - user
+id: node.cocktail.teaser
+targetEntityType: node
+bundle: cocktail
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden: {  }

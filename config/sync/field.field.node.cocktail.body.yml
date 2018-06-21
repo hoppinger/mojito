@@ -1,0 +1,22 @@
+uuid: a3b7d01c-efa1-4ff0-9ae2-9650d04dbf4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.cocktail
+  module:
+    - text
+id: node.cocktail.body
+field_name: body
+entity_type: node
+bundle: cocktail
+label: Introduction
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

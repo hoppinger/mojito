@@ -1,0 +1,48 @@
+uuid: c451666f-57c7-4cb8-87e7-4ebeee5d0680
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.cocktail.body
+    - field.field.node.cocktail.field_image
+    - field.field.node.cocktail.field_preparations
+    - image.style.medium
+    - node.type.cocktail
+  module:
+    - image
+    - text
+    - user
+id: node.cocktail.default
+targetEntityType: node
+bundle: cocktail
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_image:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_preparations:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }
