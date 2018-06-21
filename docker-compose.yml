@@ -1,0 +1,48 @@
+version: '2'
+
+services:
+  fpm:
+    build: 
+      dockerfile: ./config/docker/fpm/Dockerfile
+      context: .
+    volumes:
+      - .:/var/www/html
+    environment:
+      DRUPAL_DB_HOST: mysql
+      DRUPAL_DB_PORT: 3306
+      DRUPAL_DB_USER: mojito
+      DRUPAL_DB_PASSWORD: mojito
+      DRUPAL_DB_NAME: mojito
+      DRUPAL_HASH_SALT: mO2eqlbrIf52w847ziChigA3ijlsL4rEtRlchUphI8ijEkU86wubLplqafOdr2sa
+      DRUPAL_MODE: development
+    networks:
+      - mojito
+  nginx:
+    build:
+      dockerfile: ./config/docker/nginx/Dockerfile
+      context: .
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "5080:80"
+    networks:
+      - mojito
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "13306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mojito
+      MYSQL_USER: mojito
+      MYSQL_PASSWORD: mojito
+    networks:
+      - mojito
+
+volumes:
+  db_data:
+    driver: local
+networks:
+  mojito:

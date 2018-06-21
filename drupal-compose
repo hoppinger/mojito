@@ -1,0 +1,3 @@
+#!/bin/bash
+ARGS="$@"
+docker-compose exec fpm sh -c "cd web && ../vendor/bin/drupal $ARGS"
